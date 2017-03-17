@@ -48,14 +48,21 @@ class ViewController: UIViewController {
         
         else {
             
-            navBarHeightConstraint.constant = 220
+            navBarHeightConstraint.constant = 200
             isExpanded = true
         }
         
-        UIView.animate(withDuration: 0.5, delay: 0.25, options: .curveEaseIn, animations: { () -> Void in
+
+        UIView.animate(withDuration: 1.0, delay: 0.25, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: { () -> Void in
             
             self.view.layoutIfNeeded()
             
         }, completion: nil)
+            
+//        UIView.animate(withDuration: 0.5, delay: 0.25, options: .curveEaseIn, animations: { () -> Void in
+//            
+//            self.view.layoutIfNeeded()
+//            
+//        }, completion: nil)
     }
 }
