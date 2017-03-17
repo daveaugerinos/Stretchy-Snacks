@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var navBarHeightConstraint: NSLayoutConstraint!
     private var isExpanded = false
+    private var rotationAngle = M_PI_4
     
     override func viewDidLoad() {
         
@@ -43,26 +44,26 @@ class ViewController: UIViewController {
         if(isExpanded) {
         
             navBarHeightConstraint.constant = 66
+            rotationAngle = 0
             isExpanded = false
         }
         
         else {
             
             navBarHeightConstraint.constant = 200
+            rotationAngle = M_PI_4
             isExpanded = true
         }
         
-
-        UIView.animate(withDuration: 1.0, delay: 0.25, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: { () -> Void in
+        UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseIn, animations: { () -> Void in
+            
+            sender.transform = CGAffineTransform(rotationAngle: CGFloat(self.rotationAngle))
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 1.0, delay: 0.25, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: { () -> Void in
             
             self.view.layoutIfNeeded()
             
         }, completion: nil)
-            
-//        UIView.animate(withDuration: 0.5, delay: 0.25, options: .curveEaseIn, animations: { () -> Void in
-//            
-//            self.view.layoutIfNeeded()
-//            
-//        }, completion: nil)
     }
 }
