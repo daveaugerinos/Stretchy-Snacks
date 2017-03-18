@@ -31,9 +31,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1Sf-B2-6TI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="5wF-XX-CiR"/>
                             <constraint firstAttribute="trailing" secondItem="1Sf-B2-6TI" secondAttribute="trailing" id="nkt-sQ-m6F"/>
                             <constraint firstItem="1Sf-B2-6TI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qoS-TF-HkU"/>
+                            <constraint firstItem="1Sf-B2-6TI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" identifier="NavBarViewTopConstraint" id="tff-gu-WQa"/>
                         </constraints>
                     </view>
                     <connections>
