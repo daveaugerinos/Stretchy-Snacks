@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     private var navBarTitleYCenterUP: NSLayoutConstraint!
     private var navBarTitleYCenterDOWN: NSLayoutConstraint!
     private var navBarTitleLabel = UILabel()
+    private var stackView: UIStackView!
     private var margins = UILayoutGuide()
     private var isExpanded = false
     private var rotationAngle = M_PI_4
@@ -55,6 +56,53 @@ class ViewController: UIViewController {
         
         addButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 20).isActive = true
         addButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -3).isActive = true
+        
+        // Images
+        let imageView1 = UIImageView()
+        imageView1.image = UIImage(named: "oreos")
+        imageView1.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        imageView1.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        let imageView2 = UIImageView()
+        imageView2.image = UIImage(named: "pizza_pockets")
+        imageView2.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        imageView2.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        let imageView3 = UIImageView()
+        imageView3.image = UIImage(named: "pop_tarts")
+        imageView3.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        imageView3.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        let imageView4 = UIImageView()
+        imageView4.image = UIImage(named: "popsicle")
+        imageView4.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        imageView4.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        let imageView5 = UIImageView()
+        imageView5.image = UIImage(named: "ramen")
+        imageView5.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        imageView5.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        // Stack View
+        stackView = UIStackView()
+        stackView.axis = UILayoutConstraintAxis.horizontal
+        stackView.distribution = UIStackViewDistribution.equalSpacing
+        stackView.alignment = UIStackViewAlignment.center
+        stackView.spacing = 16.0
+        
+        stackView.addArrangedSubview(imageView1)
+        stackView.addArrangedSubview(imageView2)
+        stackView.addArrangedSubview(imageView3)
+        stackView.addArrangedSubview(imageView4)
+        stackView.addArrangedSubview(imageView5)
+        stackView.translatesAutoresizingMaskIntoConstraints = false;
+        
+        view.addSubview(stackView)
+        stackView.isHidden = true
+        
+        //Constraints
+        stackView.centerXAnchor.constraint(equalTo: navBarView.centerXAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: navBarView.bottomAnchor, constant: -10).isActive = true
     }
     
     func addButtonTapped(sender: UIButton) {
@@ -91,10 +139,12 @@ class ViewController: UIViewController {
                 
                 self.navBarTitleLabel.alpha = 1
                 
+                self.stackView.isHidden = !self.stackView.isHidden
+                
             }, completion: nil)
         })
         
-        UIView.animate(withDuration: 1.0, delay: 0.25, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: { () -> Void in
+        UIView.animate(withDuration: 1.0, delay: 0.25, usingSpringWithDamping: 0.5, initialSpringVelocity: 1.0, options: .curveEaseIn, animations: { () -> Void in
             
             sender.transform = CGAffineTransform(rotationAngle: CGFloat(self.rotationAngle))
             
