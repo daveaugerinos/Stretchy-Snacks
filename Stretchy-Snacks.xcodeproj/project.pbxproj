@@ -16,6 +16,7 @@
 		A27CCB8A1E7B619700434509 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27CCB891E7B619700434509 /* UIColorExtension.swift */; };
 		A2DF19071E7CDB4A00D10D2A /* SnackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DF19061E7CDB4A00D10D2A /* SnackItem.swift */; };
 		A2DF19091E7CDD5600D10D2A /* SnackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DF19081E7CDD5600D10D2A /* SnackTableViewCell.swift */; };
+		A2E1D2461E7DC75100D1D8C0 /* SnackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E1D2451E7DC75100D1D8C0 /* SnackTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		A27CCB891E7B619700434509 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A2DF19061E7CDB4A00D10D2A /* SnackItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackItem.swift; sourceTree = "<group>"; };
 		A2DF19081E7CDD5600D10D2A /* SnackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackTableViewCell.swift; sourceTree = "<group>"; };
+		A2E1D2451E7DC75100D1D8C0 /* SnackTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SnackTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				A2DF19081E7CDD5600D10D2A /* SnackTableViewCell.swift */,
+				A2E1D2451E7DC75100D1D8C0 /* SnackTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			files = (
 				A27CCB6F1E7B5C1B00434509 /* LaunchScreen.storyboard in Resources */,
 				A27CCB6C1E7B5C1B00434509 /* Assets.xcassets in Resources */,
+				A2E1D2461E7DC75100D1D8C0 /* SnackTableViewCell.xib in Resources */,
 				A27CCB6A1E7B5C1B00434509 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

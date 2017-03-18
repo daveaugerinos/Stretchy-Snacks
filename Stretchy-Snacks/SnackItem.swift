@@ -16,7 +16,7 @@ struct SnackItem {
         
         case oreos = "Oreos"
         case pizzaPockets = "Pizza Pockets"
-        case popTarts = "Pot Tarts"
+        case popTarts = "Pop Tarts"
         case popscile = "Popscile"
         case ramen = "Ramen"
     }
