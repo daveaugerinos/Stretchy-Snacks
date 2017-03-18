@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		A27CCB651E7B5C1B00434509 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27CCB641E7B5C1B00434509 /* AppDelegate.swift */; };
-		A27CCB671E7B5C1B00434509 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27CCB661E7B5C1B00434509 /* ViewController.swift */; };
+		A27CCB671E7B5C1B00434509 /* SnackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27CCB661E7B5C1B00434509 /* SnackViewController.swift */; };
 		A27CCB6A1E7B5C1B00434509 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27CCB681E7B5C1B00434509 /* Main.storyboard */; };
 		A27CCB6C1E7B5C1B00434509 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A27CCB6B1E7B5C1B00434509 /* Assets.xcassets */; };
 		A27CCB6F1E7B5C1B00434509 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27CCB6D1E7B5C1B00434509 /* LaunchScreen.storyboard */; };
 		A27CCB7A1E7B5C1B00434509 /* Stretchy_SnacksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27CCB791E7B5C1B00434509 /* Stretchy_SnacksTests.swift */; };
 		A27CCB8A1E7B619700434509 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27CCB891E7B619700434509 /* UIColorExtension.swift */; };
+		A2DF19071E7CDB4A00D10D2A /* SnackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DF19061E7CDB4A00D10D2A /* SnackItem.swift */; };
+		A2DF19091E7CDD5600D10D2A /* SnackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DF19081E7CDD5600D10D2A /* SnackTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +31,7 @@
 /* Begin PBXFileReference section */
 		A27CCB611E7B5C1B00434509 /* Stretchy-Snacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stretchy-Snacks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A27CCB641E7B5C1B00434509 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A27CCB661E7B5C1B00434509 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A27CCB661E7B5C1B00434509 /* SnackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackViewController.swift; sourceTree = "<group>"; };
 		A27CCB691E7B5C1B00434509 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A27CCB6B1E7B5C1B00434509 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A27CCB6E1E7B5C1B00434509 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		A27CCB791E7B5C1B00434509 /* Stretchy_SnacksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stretchy_SnacksTests.swift; sourceTree = "<group>"; };
 		A27CCB7B1E7B5C1B00434509 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A27CCB891E7B619700434509 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		A2DF19061E7CDB4A00D10D2A /* SnackItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackItem.swift; sourceTree = "<group>"; };
+		A2DF19081E7CDD5600D10D2A /* SnackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 		A27CCB851E7B5CAB00434509 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A2DF19081E7CDD5600D10D2A /* SnackTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			children = (
 				A27CCB641E7B5C1B00434509 /* AppDelegate.swift */,
 				A27CCB891E7B619700434509 /* UIColorExtension.swift */,
+				A2DF19061E7CDB4A00D10D2A /* SnackItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -125,7 +131,7 @@
 		A27CCB871E7B5CAF00434509 /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				A27CCB661E7B5C1B00434509 /* ViewController.swift */,
+				A27CCB661E7B5C1B00434509 /* SnackViewController.swift */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -244,8 +250,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A27CCB671E7B5C1B00434509 /* ViewController.swift in Sources */,
+				A2DF19091E7CDD5600D10D2A /* SnackTableViewCell.swift in Sources */,
+				A27CCB671E7B5C1B00434509 /* SnackViewController.swift in Sources */,
 				A27CCB651E7B5C1B00434509 /* AppDelegate.swift in Sources */,
+				A2DF19071E7CDB4A00D10D2A /* SnackItem.swift in Sources */,
 				A27CCB8A1E7B619700434509 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +464,7 @@
 				A27CCB801E7B5C1B00434509 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A27CCB811E7B5C1B00434509 /* Build configuration list for PBXNativeTarget "Stretchy-SnacksTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +473,7 @@
 				A27CCB831E7B5C1B00434509 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

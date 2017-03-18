@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SnackViewController.swift
 //  Stretchy-Snacks
 //
 //  Created by Dave Augerinos on 2017-03-16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SnackViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var navBarView: UIView!
     @IBOutlet weak var navBarHeightConstraint: NSLayoutConstraint!
@@ -20,6 +20,12 @@ class ViewController: UIViewController {
     private var isExpanded = false
     private var rotationAngle = M_PI_4
     private var currentText = String()
+    
+    private let snackTableView = UITableView()
+    
+    var snackArray = [SnackItem]()
+    
+    private let kTableHeaderHeight:CGFloat = 200
     
     override func viewDidLoad() {
         
@@ -56,6 +62,19 @@ class ViewController: UIViewController {
         
         addButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 20).isActive = true
         addButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -3).isActive = true
+        
+        // Table View
+        snackTableView.dataSource = self
+        snackTableView.estimatedRowHeight = 25
+        snackTableView.rowHeight = UITableViewAutomaticDimension
+        snackTableView.register(SnackTableViewCell.self, forCellReuseIdentifier: "snackCell")
+        
+        view.addSubview(snackTableView)
+        snackTableView.translatesAutoresizingMaskIntoConstraints = false
+        snackTableView.topAnchor.constraint(equalTo: navBarView.bottomAnchor).isActive = true
+        snackTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        snackTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        snackTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
         // Images
         let imageView1 = UIImageView()
@@ -104,6 +123,38 @@ class ViewController: UIViewController {
         stackView.centerXAnchor.constraint(equalTo: navBarView.centerXAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: navBarView.bottomAnchor, constant: -10).isActive = true
     }
+    
+    // MARK: - Table view data source
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return snackArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // Set Identifier
+        let cellIdentifier = "snackCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SnackTableViewCell else {
+            fatalError("The dequeued cell is not an instance of SnackTableViewCell.")
+        }
+        
+        // Fetches the appropriate meal for the data source layout.
+        let snackItem = snackArray[indexPath.row]
+        
+        // Configure the cell
+        cell.configureSnackCell(with: snackItem)
+        
+        return cell
+    }
+    
+    // MARK: - Action Methods
     
     func addButtonTapped(sender: UIButton) {
         
